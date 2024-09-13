@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>resume and code</title>
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 30%;
+        }
+        #num1, #num2{
+            padding: 5px 10px;
+        }
+        .form_button{
+            padding: 10px 20px;
+            text-align: center;
+            background-color: aqua;
+            border: 2px solid salmon;
+            border-radius: 5px;
+           width: 30%;
+        }
+        .PDF_button{
+        border: 1px solid rgb(70, 51, 54);
+        border-radius: 5px;
+        background-color: pink;
+        padding: 10px 20px;
+        margin: 10px;
+    }
+
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">for adding two number take 2 number here :-</h1>
+    <form onsubmit="return sumFunction()">
+        <label for="num1">Number 1:</label>
+        <input type="text" id="num1" placeholder="Enter the First Number">
+        <label for="num2">Number 2;</label>
+        <input type="text" id="num2" placeholder="Enter the Second Number">
+        <button class="form_button">submit</button>
+      
+        <label for="result">Your Result Is : </label>
+        <input type="text" id="result" readonly>
+    </form>
+    <div style="display: flex; justify-content: center; align-items: center;">
+        <button onclick="openPDF()" class="PDF_button">Open PDF</button>
+    </div>
+        
+</body>
+<script>
+
+    const sumFunction=(a,b)=>{
+        let num1=parseFloat(document.getElementById("num1").value)
+        let num2=parseFloat(document.getElementById("num2").value)
+        if (num1 && num2){
+            let sum=num1+num2
+        document.getElementById("result").value=sum;
+        }else{
+            alert("Please Enter the Numbers")
+        }
+        return false
+        
+    }
+    const openPDF=()=> {
+            window.open('Pooja Singh-1.pdf', '_blank');
+        }
+</script>
+</html>
