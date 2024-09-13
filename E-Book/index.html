@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Table</title>
+    <style>
+        /* Internal CSS for styling */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        table {
+            border: 2px solid black;
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid black;
+
+        }
+
+        th {
+            margin: 2px 0 2px 0;
+            border: 1px solid black;
+        }
+
+        .book-link {
+            color: blue;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        button{
+            border-radius: 5px;
+            background-color: rgb(149, 149, 241);
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 style="text-align:center;">Book Table</h1>
+
+    <table>
+        <tr>
+            <th>Book Name</th>
+            <th>Author</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Link</th>
+        </tr>
+        <tr>
+            <td><span class="book-link" onclick="openBook('LovingEliza-obooko-rom0040.pdf')">Loving Eliza</span></td>
+            <td>Eliza Smith</td>
+            <td>$12.99</td>
+            <td>Romance</td>
+            <td><button onclick="openBook('LovingEliza-obooko-rom0040.pdf')">Open PDF</button></td>
+        </tr>
+        <tr>
+            <td><span class="book-link" onclick="openBook('wolf-county-usa-jane-obooko.pdf')">Wolf County</span></td>
+            <td>Jane Doe</td>
+            <td>$15.99</td>
+            <td>Thriller</td>
+            <td><button onclick="openBook('wolf-county-usa-jane-obooko.pdf')">Open PDF</button></td>
+        </tr>
+        <tr>
+            <td><span class="book-link" onclick="openBook('beauty-of-ares-obooko.pdf')">Beauty of Ares</span></td>
+            <td>Ares John</td>
+            <td>$10.99</td>
+            <td>Fantasy</td>
+            <td><button onclick="openBook('beauty-of-ares-obooko.pdf')">Open PDF</button></td>
+        </tr>
+        <tr>
+            <td><span class="book-link" onclick="openBook('Four-Steps-to-Forgiveness-William-Fergus-Martin.pdf')">Four Steps to Forgiveness</span></td>
+            <td>William Fergus Martin</td>
+            <td>$8.99</td>
+            <td>Self-help</td>
+            <td><button onclick="openBook('Four-Steps-to-Forgiveness-William-Fergus-Martin.pdf')">Open PDF</button></td>
+        </tr>
+    </table>
+
+    <script>
+        function openBook(fileName) {
+            // This will open the PDF in a new tab
+            window.open(fileName, '_blank');
+        }
+    </script>
+
+</body>
+</html>

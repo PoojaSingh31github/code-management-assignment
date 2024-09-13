@@ -3,67 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>resume and code</title>
+    <title>Resume and Code</title>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
         form {
             display: flex;
             flex-direction: column;
-            width: 30%;
+            width: 40%;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
         }
-        #num1, #num2{
-            padding: 5px 10px;
+
+        label {
+            margin-bottom: 10px;
+            font-weight: bold;
         }
-        .form_button{
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form_button {
             padding: 10px 20px;
             text-align: center;
-            background-color: aqua;
-            border: 2px solid salmon;
+            background-color: #00c4cc;
+            border: 2px solid #ff7f7f;
             border-radius: 5px;
-           width: 30%;
+            font-weight: bold;
+            color: #333;
+            cursor: pointer;
+            width: 50%;
+            margin: 0 auto;
         }
-        .PDF_button{
-        border: 1px solid rgb(70, 51, 54);
-        border-radius: 5px;
-        background-color: pink;
-        padding: 10px 20px;
-        margin: 10px;
-    }
 
+        .form_button:hover {
+            background-color: #00b3ba;
+        }
+
+        .PDF_button {
+            border: 1px solid #463336;
+            border-radius: 5px;
+            background-color: pink;
+            padding: 10px 20px;
+            margin: 20px auto;
+            display: block;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .PDF_button:hover {
+            background-color: #ffb3c1;
+        }
+
+        #result {
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 4px;
+        }
     </style>
 </head>
 <body>
-    <h1 style="text-align: center;">for adding two number take 2 number here :-</h1>
+    <h1>Sum Two Numbers</h1>
     <form onsubmit="return sumFunction()">
         <label for="num1">Number 1:</label>
         <input type="text" id="num1" placeholder="Enter the First Number">
-        <label for="num2">Number 2;</label>
+        <label for="num2">Number 2:</label>
         <input type="text" id="num2" placeholder="Enter the Second Number">
-        <button class="form_button">submit</button>
+        <button type="submit" class="form_button">Submit</button>
       
-        <label for="result">Your Result Is : </label>
+        <label for="result">Your Result Is:</label>
         <input type="text" id="result" readonly>
     </form>
-    <div style="display: flex; justify-content: center; align-items: center;">
+
+    <div style="text-align: center;">
         <button onclick="openPDF()" class="PDF_button">Open PDF</button>
     </div>
         
-</body>
-<script>
+    <script>
+        const sumFunction = () => {
+            let num1 = parseFloat(document.getElementById("num1").value)
+            let num2 = parseFloat(document.getElementById("num2").value)
+            
+            if (!isNaN(num1) && !isNaN(num2)) {
+                let sum = num1 + num2
+                document.getElementById("result").value = sum
+            } else {
+                alert("Please enter valid numbers")
+            }
+            return false
+        }
 
-    const sumFunction=(a,b)=>{
-        let num1=parseFloat(document.getElementById("num1").value)
-        let num2=parseFloat(document.getElementById("num2").value)
-        if (num1 && num2){
-            let sum=num1+num2
-        document.getElementById("result").value=sum;
-        }else{
-            alert("Please Enter the Numbers")
+        const openPDF = () => {
+            window.open('Pooja Singh-1.pdf', '_blank')
         }
-        return false
-        
-    }
-    const openPDF=()=> {
-            window.open('Pooja Singh-1.pdf', '_blank');
-        }
-</script>
+    </script>
+</body>
 </html>

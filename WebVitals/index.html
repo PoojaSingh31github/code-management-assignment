@@ -3,9 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Responsive Images with Picture Element</title>
 </head>
 <body>
+
+    <h1>Responsive Images Example</h1>
     
+    <picture>
+        <source media="(min-width: 1200px)" srcset="large-image.jpg" type="image/jpeg">
+        <source media="(min-width: 768px) and (max-width: 1199px)" srcset="medium-image.jpg" type="image/jpeg">
+        <source media="(max-width: 767px)" srcset="small-image.jpg" type="image/jpeg">
+        <img src="https://www.google.com/imgres?q=doll&imgurl=https%3A%2F%2Fcdn.pixelbin.io%2Fv2%2Fblack-bread-289bfa%2FHrdP6X%2Foriginal%2Fhamleys-product%2F491603732%2F665%2F491603732-3_8729.webp&imgrefurl=https%3A%2F%2Fwww.hamleys.in%2Fproduct%2Fbarbie-doll-with-floral-dress-assorted-491603732&docid=Fsm0tThZ-fhi3M&tbnid=OdZmK3J_M_0ffM&vet=12ahUKEwjUicyG97-IAxXNcGwGHTZuK_MQM3oECFsQAA..i&w=1200&h=1120&hcb=2&ved=2ahUKEwjUicyG97-IAxXNcGwGHTZuK_MQM3oECFsQAA" alt="A responsive image example">
+    </picture>
+
 </body>
 </html>
